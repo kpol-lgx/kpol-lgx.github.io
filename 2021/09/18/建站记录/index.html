@@ -220,19 +220,18 @@ $ hexo s从本地预览，"/>
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p>请结合hexo官方文档观看</p>
-<p><strong>本地操作</strong><br>安装 git Node.js</p>
+<p>本地操作<br>安装 git Node.js</p>
 <p>使用npm安装hexo 实际是hexo-cli</p>
 <p>初始化<br>$ hexo init folder-name<br>$ cd folder-name<br>$ npm install</p>
 <p>folder-name 改成自己的文件夹名称</p>
 <p>$ hexo s<br>从本地预览，初始是一个Hello World!以及官方自带的主题</p>
-<p><strong>github操作</strong><br>github上新建仓库<br>要求 ： 必须以 username.github.io 命名<br>其中 username 必须是github账户名</p>
-<p><strong>本地操作</strong><br>在前面的 $ hexo init <folder> 命令所创建的文件夹中找到_config.yml，修改deploy下的选项</p>
+<p>github操作<br>github上新建仓库<br>要求 ： 必须以 username.github.io 命名<br>其中 username 必须是github账户名</p>
+<p>本地操作<br>在前面的 $ hexo init <folder> 命令所创建的文件夹中找到_config.yml，修改deploy下的选项</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">branch: [branch]</span><br><span class="line">message: [message]</span><br></pre></td></tr></table></figure>
-<p><em>注意：冒号后面必须有一个空格，repo还有其他写法，但不再介绍，后两个可选</em></p>
-<p>之后<br>$ npm install hexo-deploy-git –save</p>
-<p>$ hexo clean &amp;&amp; hexo deploy</p>
-<p><strong>github操作</strong><br>前往github,到所建的仓库下，在仓库的设置中把默认分支改成master,因为_config.yml里的默认分支就是master。愿意折腾的可以自己改。</p>
-<p><strong>其他</strong><br>如果想要更改主题，请到hexo官网找到主题下载（其实是从github上下载），下载到theme本地文件夹。之后去_config.yml里改对应设置。最好执行一下 $ hexo d</p>
+<p>注意：冒号后面必须有一个空格，repo还有其他写法，但不再介绍，后两个可选</p>
+<p>之后<br>$ npm install hexo-deploy-git –save<br>$ hexo clean &amp;&amp; hexo deploy</p>
+<p>github操作<br>前往github,到所建的仓库下，在仓库的设置中把默认分支改成master,因为_config.yml里的默认分支就是master。愿意折腾的可以自己改。</p>
+<p>其他<br>如果想要更改主题，请到hexo官网找到主题下载（其实是从github上下载），下载到theme本地文件夹。之后去_config.yml里改对应设置。最好执行一下 $ hexo d</p>
 <p>注意：本地更改过后有可能无法在网页上显示改变，可能需要等待一会。如果长时间没有反应，请执行$ hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy ，如果依然没有反应，这边建议直接在本地重新开一个。</p>
 <p>更多内容请参考官方文档</p>
 
