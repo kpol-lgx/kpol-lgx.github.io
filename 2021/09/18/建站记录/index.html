@@ -13,6 +13,12 @@
     
 
     
+        <meta name="description" content="安装 git Node.js使用npm安装hexo 实际是hexo-cli
+初始化$ hexo init $ cd $ npm install
+$ hexo s从本地预览
+github上新建仓库要求 ： 必须以 .github.io 命名其中  是github账户名
+在前面的 $ hexo init"/>
+    
 
     <!--Author-->
     
@@ -21,10 +27,16 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hexo"/>
+        <meta property="og:title" content="建站记录"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="安装 git Node.js使用npm安装hexo 实际是hexo-cli
+初始化$ hexo init $ cd $ npm install
+$ hexo s从本地预览
+github上新建仓库要求 ： 必须以 .github.io 命名其中  是github账户名
+在前面的 $ hexo init"/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +44,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +63,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2021 - Hexo</title>
+    <title>建站记录 - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,62 +167,94 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2021</h1>
+                <div class="post-heading">
+                    <h1>建站记录</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2021-09-18
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/note/">#note</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2021/09/18/建站记录/">
-        <h1 class="post-title archive">
-            建站记录
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2021-09-18
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2021/09/18/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2021-09-18
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>安装 git Node.js<br>使用npm安装hexo 实际是hexo-cli</p>
+<p>初始化<br>$ hexo init <folder><br>$ cd <folder><br>$ npm install</p>
+<p>$ hexo s<br>从本地预览</p>
+<p>github上新建仓库<br>要求 ： 必须以 <username>.github.io 命名<br>其中 <username> 是github账户名</p>
+<p>在前面的 $ hexo init <folder> 命令所创建的文件夹中找到_config.yml，修改deploy下的选项</p>
+<pre><code>  deploy:
+  type: git
+  repo: &lt;repository url&gt; #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  branch: [branch]
+  message: [message]```
+
+之后
+$ npm install hexo-deploy-git --save
+
+$ hexo clean &amp;&amp; hexo deploy
+
+前往github,到所建的仓库下，在仓库的设置中把默认分支改成master,因为_config.yml里的默认分支就是master.
+
+如果想要更改主题，请到hexo官网找到主题下载（其实是从github上下载），下载到theme本地文件夹。之后去_config.yml里该对应设置
+
+注意：本地更改过后有可能无法在网页上显示改变，可能需要等待一会。如果长时间没有反应，请执行$ hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy ，如果依然没有反应，这边建议直接在本地重新开一个。
+</code></pre>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
