@@ -117,12 +117,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
@@ -155,6 +155,97 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/09/18/%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gxliu">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gxliu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/09/18/%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">建站记录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-09-18 15:54:32" itemprop="dateCreated datePublished" datetime="2021-09-18T15:54:32+08:00">2021-09-18</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-21 19:45:00" itemprop="dateModified" datetime="2021-10-21T19:45:00+08:00">2021-10-21</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>请结合hexo官方文档观看<br><em>所有带$符号命令均表示在命令行下操作</em></p>
+<p>本地操作<br>安装 git 和 Node.js</p>
+<p>使用npm安装hexo 实际是hexo-cli</p>
+<p>初始化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init folder-name</span><br><span class="line">$ cd folder-name</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>folder-name 改成自己的文件夹名称。<code>npm install</code>后面没有任何其他内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>从本地预览，初始是一个Hello World!以及官方自带的主题</p>
+<p>github操作<br>github上新建仓库<br>要求 ： 必须以 username.github.io 命名<br>其中 username 必须是自己的github账户名</p>
+<p>本地操作<br>在前面的 $ hexo init <folder> 命令所创建的文件夹（暂时称为站点文件夹）中找到_config.yml，修改deploy下的选项</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">branch: [branch]</span><br><span class="line">message: [message]</span><br></pre></td></tr></table></figure>
+<p>注意：冒号后面必须有一个空格，repo还有其他写法，但不再介绍，后两个可选</p>
+<p>之后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deploy-git --save</span><br><span class="line">$ hexo clean &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+<p>github操作<br>前往github，到所建的仓库下，在仓库的设置中把默认分支改成master,因为_config.yml里的默认分支就是master。愿意折腾的可以自己改成其他分支。</p>
+<p>其他<br>如果想要更改主题，请到hexo官网找到主题下载（其实是从github上下载），下载到theme本地文件夹（这个文件夹就在上面说的站点文件夹里），之后去_config.yml里改对应设置（这里自行查看主题自带的README文档）。最好执行一下 $ hexo d</p>
+<p>注意：本地更改过后有可能无法在网页上显示改变，可能需要等待一会。如果长时间没有反应，请执行$ hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy ，如果依然没有反应，这边建议直接在本地重新开一个。</p>
+<p>更多内容请参考官方文档</p>
+<hr>
+<p>修改站点 _config.yml以及主题下 _config.yml 均不生效，hexo clean &amp;&amp; hexo g 同样无用。最终 npm uninstall hexo-theme-keep 卸载了原先的主题，更换为next主题。事后思考，大概是原先的主题没有更新。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
