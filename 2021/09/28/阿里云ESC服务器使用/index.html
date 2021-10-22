@@ -19,13 +19,13 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kpol-lgx.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="使用之前的必要操作 购买完成之后前往控制台搜索 云服务器ESC 然后进入 云服务器管理控制台在概览中找到购买的服务器，点击实例名进入实例。然后在右上角重置实例密码 根据推荐将实例加入安全组，确保开放几个端口左侧网络与安全找到密钥对，创建密钥对，绑定对应实例。pem文件 妥善保管在本地。本地安装ssh，配置好 ~&#x2F;.ssh&#x2F;config文件格式如下 12345Host Name  # Name，自由">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kpol-lgx.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="使用之前的必要操作 购买完成之后前往控制台 搜索 云服务器ESC 然后进入 云服务器管理控制台 在概览中找到购买的服务器，点击实例名进入实例。 然后在右上角重置实例密码 根据推荐将实例加入安全组，确保开放几个端口 左侧网络与安全找到密钥对，创建密钥对，绑定对应实例。pem文件 妥善保管在本地。 本地安装ssh，配置好 ~&#x2F;.ssh&#x2F;config文件 格式如下 12345Host Name  # N">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里云ESC服务器使用">
 <meta property="og:url" content="https://kpol-lgx.github.io/2021/09/28/%E9%98%BF%E9%87%8C%E4%BA%91ESC%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Gxliu">
-<meta property="og:description" content="使用之前的必要操作 购买完成之后前往控制台搜索 云服务器ESC 然后进入 云服务器管理控制台在概览中找到购买的服务器，点击实例名进入实例。然后在右上角重置实例密码 根据推荐将实例加入安全组，确保开放几个端口左侧网络与安全找到密钥对，创建密钥对，绑定对应实例。pem文件 妥善保管在本地。本地安装ssh，配置好 ~&#x2F;.ssh&#x2F;config文件格式如下 12345Host Name  # Name，自由">
+<meta property="og:description" content="使用之前的必要操作 购买完成之后前往控制台 搜索 云服务器ESC 然后进入 云服务器管理控制台 在概览中找到购买的服务器，点击实例名进入实例。 然后在右上角重置实例密码 根据推荐将实例加入安全组，确保开放几个端口 左侧网络与安全找到密钥对，创建密钥对，绑定对应实例。pem文件 妥善保管在本地。 本地安装ssh，配置好 ~&#x2F;.ssh&#x2F;config文件 格式如下 12345Host Name  # N">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-28T10:34:20.000Z">
 <meta property="article:modified_time" content="2021-09-30T10:56:38.047Z">
@@ -216,23 +216,11 @@
     
     <div class="post-body" itemprop="articleBody">
         <p><strong>使用之前的必要操作</strong></p>
-<p>购买完成之后前往<em>控制台</em><br>搜索 <em>云服务器ESC</em> 然后进入 <em>云服务器管理控制台</em><br>在<em>概览</em>中找到购买的服务器，点击实例名进入实例。<br>然后在右上角<strong>重置实例密码</strong></p>
-<p>根据推荐将实例加入安全组，确保开放几个端口<br>左侧<em>网络与安全</em>找到<em>密钥对</em>，创建密钥对，绑定对应实例。<strong>pem文件</strong> 妥善保管在本地。<br>本地安装ssh，配置好 ~/.ssh/config文件<br>格式如下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host Name  # Name，自由取，简短好记即可</span><br><span class="line">        HostName 8.8.8.8 # 改成自己的公网ip地址</span><br><span class="line">        User root # 以root身份登陆，其他身份登陆暂时不会</span><br><span class="line">        Port 22 # 根据安全组的开放端口填写（22端口是默认值）</span><br><span class="line">        IdentityFile ~/.ssh/identity.pem # 认证文件，填写之前下载的pem文件的绝对路径</span><br></pre></td></tr></table></figure>
-<p>pem文件属性要改成只有用户自己能操作，推荐400（只读）或者600（可读可写）。linux用户执行下面的命令即可（请确保在pem文件所在目录下执行命令）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 400 identity.pem # chmod用来更改文件权限</span><br></pre></td></tr></table></figure>
-<p>之后本地命令行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh Name # Name 就是 config里写好的那个Name</span><br></pre></td></tr></table></figure>
-<p>首次链接会给一个警告，大意是说这是个陌生的链接，看情况输入yes然后回车</p>
+<p>购买完成之后前往<em>控制台</em> 搜索 <em>云服务器ESC</em> 然后进入 <em>云服务器管理控制台</em> 在<em>概览</em>中找到购买的服务器，点击实例名进入实例。 然后在右上角<strong>重置实例密码</strong></p>
+<p>根据推荐将实例加入安全组，确保开放几个端口 左侧<em>网络与安全</em>找到<em>密钥对</em>，创建密钥对，绑定对应实例。<strong>pem文件</strong> 妥善保管在本地。 本地安装ssh，配置好 ~/.ssh/config文件 格式如下 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host Name  # Name，自由取，简短好记即可</span><br><span class="line">        HostName 8.8.8.8 # 改成自己的公网ip地址</span><br><span class="line">        User root # 以root身份登陆，其他身份登陆暂时不会</span><br><span class="line">        Port 22 # 根据安全组的开放端口填写（22端口是默认值）</span><br><span class="line">        IdentityFile ~/.ssh/identity.pem # 认证文件，填写之前下载的pem文件的绝对路径</span><br></pre></td></tr></table></figure> pem文件属性要改成只有用户自己能操作，推荐400（只读）或者600（可读可写）。linux用户执行下面的命令即可（请确保在pem文件所在目录下执行命令） <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 400 identity.pem # chmod用来更改文件权限</span><br></pre></td></tr></table></figure> 之后本地命令行 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh Name # Name 就是 config里写好的那个Name</span><br></pre></td></tr></table></figure> 首次链接会给一个警告，大意是说这是个陌生的链接，看情况输入yes然后回车</p>
 <p>此时已经登陆远程服务器</p>
-<p>登入之后请务必更新源，更新软件，更新系统。以ubuntu为例，以root身份执行以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get update</span><br><span class="line">$ apt-get upgrade</span><br><span class="line">$ apt-get dist-upgrade</span><br></pre></td></tr></table></figure>
-<p>如果要添加用户，根据不同系统查询操作，以ubuntu为例</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adduser username</span><br></pre></td></tr></table></figure>
-<p>之后按要求填写密码（记好密码），其他一路回车</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">usermod -aG sudo username # 把对应用户添加到sudo用户组中，这很重要！</span><br><span class="line">su username # 从root切换到对应用户，想切回去，直接exit,断开服务器也是exit</span><br></pre></td></tr></table></figure>
-
-<hr>
+<p>登入之后请务必更新源，更新软件，更新系统。以ubuntu为例，以root身份执行以下命令 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get update</span><br><span class="line">$ apt-get upgrade</span><br><span class="line">$ apt-get dist-upgrade</span><br></pre></td></tr></table></figure> 如果要添加用户，根据不同系统查询操作，以ubuntu为例 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adduser username</span><br></pre></td></tr></table></figure> 之后按要求填写密码（记好密码），其他一路回车 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">usermod -aG sudo username # 把对应用户添加到sudo用户组中，这很重要！</span><br><span class="line">su username # 从root切换到对应用户，想切回去，直接exit,断开服务器也是exit</span><br></pre></td></tr></table></figure></p>
+<hr />
 <p>现在已经可以方便地远程链接服务器了，之后想怎么折腾看自己了。</p>
 
     </div>
@@ -287,7 +275,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Gxliu</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
     </div>
@@ -295,7 +283,7 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -306,6 +294,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
 

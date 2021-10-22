@@ -19,13 +19,13 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kpol-lgx.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Reminder: 线性神经元的误差曲面Reminder是立体3D的，水平面上是各个权重的变化，有一个垂直轴z轴对应误差变化。对于具有平方误差的线性神经元，这个图像是一个二次的碗（立体的盆）。 多层，非线性神经元的误差曲面复杂的多。但是在局部，一个二次的碗的一部分通常可以作为一个非常好的近似。 误差曲面为二次的碗时全数据集训练的收敛速度除非椭圆是圆，否则最速下降的方向不会指向最小值。梯度总是在我们">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kpol-lgx.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="Reminder: 线性神经元的误差曲面 Reminder是立体3D的，水平面上是各个权重的变化，有一个垂直轴z轴对应误差变化。对于具有平方误差的线性神经元，这个图像是一个二次的碗（立体的盆）。 多层，非线性神经元的误差曲面复杂的多。但是在局部，一个二次的碗的一部分通常可以作为一个非常好的近似。 误差曲面为二次的碗时全数据集训练的收敛速度 除非椭圆是圆，否则最速下降的方向不会指向最小值。梯度总是在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Overview of mini-batch gradient descent">
 <meta property="og:url" content="https://kpol-lgx.github.io/2021/10/21/Overview-of-mini-batch-gradient-descent/index.html">
 <meta property="og:site_name" content="Gxliu">
-<meta property="og:description" content="Reminder: 线性神经元的误差曲面Reminder是立体3D的，水平面上是各个权重的变化，有一个垂直轴z轴对应误差变化。对于具有平方误差的线性神经元，这个图像是一个二次的碗（立体的盆）。 多层，非线性神经元的误差曲面复杂的多。但是在局部，一个二次的碗的一部分通常可以作为一个非常好的近似。 误差曲面为二次的碗时全数据集训练的收敛速度除非椭圆是圆，否则最速下降的方向不会指向最小值。梯度总是在我们">
+<meta property="og:description" content="Reminder: 线性神经元的误差曲面 Reminder是立体3D的，水平面上是各个权重的变化，有一个垂直轴z轴对应误差变化。对于具有平方误差的线性神经元，这个图像是一个二次的碗（立体的盆）。 多层，非线性神经元的误差曲面复杂的多。但是在局部，一个二次的碗的一部分通常可以作为一个非常好的近似。 误差曲面为二次的碗时全数据集训练的收敛速度 除非椭圆是圆，否则最速下降的方向不会指向最小值。梯度总是在">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-21T14:51:04.000Z">
 <meta property="article:modified_time" content="2021-10-21T15:31:35.648Z">
@@ -108,7 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Reminder-%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E8%AF%AF%E5%B7%AE%E6%9B%B2%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">Reminder: 线性神经元的误差曲面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%AF%E5%B7%AE%E6%9B%B2%E9%9D%A2%E4%B8%BA%E4%BA%8C%E6%AC%A1%E7%9A%84%E7%A2%97%E6%97%B6%E5%85%A8%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AE%AD%E7%BB%83%E7%9A%84%E6%94%B6%E6%95%9B%E9%80%9F%E5%BA%A6"><span class="nav-number">2.</span> <span class="nav-text">误差曲面为二次的碗时全数据集训练的收敛速度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">随机梯度下降法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">两种学习算法</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#reminder-%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E8%AF%AF%E5%B7%AE%E6%9B%B2%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">Reminder: 线性神经元的误差曲面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%AF%E5%B7%AE%E6%9B%B2%E9%9D%A2%E4%B8%BA%E4%BA%8C%E6%AC%A1%E7%9A%84%E7%A2%97%E6%97%B6%E5%85%A8%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AE%AD%E7%BB%83%E7%9A%84%E6%94%B6%E6%95%9B%E9%80%9F%E5%BA%A6"><span class="nav-number">2.</span> <span class="nav-text">误差曲面为二次的碗时全数据集训练的收敛速度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">随机梯度下降法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">两种学习算法</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -207,12 +207,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Reminder-线性神经元的误差曲面"><a href="#Reminder-线性神经元的误差曲面" class="headerlink" title="Reminder: 线性神经元的误差曲面"></a>Reminder: 线性神经元的误差曲面</h1><p>Reminder是立体3D的，水平面上是各个权重的变化，有一个垂直轴z轴对应误差变化。对于具有平方误差的线性神经元，这个图像是一个二次的碗（立体的盆）。</p>
+        <h1 id="reminder-线性神经元的误差曲面">Reminder: 线性神经元的误差曲面</h1>
+<p>Reminder是立体3D的，水平面上是各个权重的变化，有一个垂直轴z轴对应误差变化。对于具有平方误差的线性神经元，这个图像是一个二次的碗（立体的盆）。</p>
 <p>多层，非线性神经元的误差曲面复杂的多。但是在局部，一个二次的碗的一部分通常可以作为一个非常好的近似。</p>
-<h1 id="误差曲面为二次的碗时全数据集训练的收敛速度"><a href="#误差曲面为二次的碗时全数据集训练的收敛速度" class="headerlink" title="误差曲面为二次的碗时全数据集训练的收敛速度"></a>误差曲面为二次的碗时全数据集训练的收敛速度</h1><p>除非椭圆是圆，否则最速下降的方向不会指向最小值。梯度总是在我们需要较小的移动距离时很大，在需要较大移动距离时则相反。即使在非线性的多层网络局部，误差曲面也是二次的，因此同样的解决方法可以被使用。</p>
-<h1 id="随机梯度下降法"><a href="#随机梯度下降法" class="headerlink" title="随机梯度下降法"></a>随机梯度下降法</h1><p>如果数据集高度冗余，那么前一半的梯度几乎和后一半相同。所以不必计算全部梯度，要更新权重，只需要计算前一半的梯度，然后用后一半计算再下一次的梯度，总之，轮流使用就对了。这种更新权重的方式的极端版本会在每个案例之后更新，被称为”online” 。</p>
+<h1 id="误差曲面为二次的碗时全数据集训练的收敛速度">误差曲面为二次的碗时全数据集训练的收敛速度</h1>
+<p>除非椭圆是圆，否则最速下降的方向不会指向最小值。梯度总是在我们需要较小的移动距离时很大，在需要较大移动距离时则相反。即使在非线性的多层网络局部，误差曲面也是二次的，因此同样的解决方法可以被使用。</p>
+<h1 id="随机梯度下降法">随机梯度下降法</h1>
+<p>如果数据集高度冗余，那么前一半的梯度几乎和后一半相同。所以不必计算全部梯度，要更新权重，只需要计算前一半的梯度，然后用后一半计算再下一次的梯度，总之，轮流使用就对了。这种更新权重的方式的极端版本会在每个案例之后更新，被称为"online" 。</p>
 <p>小批量通常比 online 好，更新权重时前者有更少的计算，而且，同时为多个案例计算梯度采用矩阵乘法是非常高效的，特别是在GPUs上。</p>
-<h1 id="两种学习算法"><a href="#两种学习算法" class="headerlink" title="两种学习算法"></a>两种学习算法</h1><p>如果我们对于所有训练案例使用完全的梯度计算，这有相当多漂亮的方法加速学习。优化社区已经研究优化光滑非线性函数的普遍问题许多年了。不过多层神经网络并不是他们研究的问题的典型，因此他们的方法需要大量的修改。</p>
+<h1 id="两种学习算法">两种学习算法</h1>
+<p>如果我们对于所有训练案例使用完全的梯度计算，这有相当多漂亮的方法加速学习。优化社区已经研究优化光滑非线性函数的普遍问题许多年了。不过多层神经网络并不是他们研究的问题的典型，因此他们的方法需要大量的修改。</p>
 <p>对于有非常大且冗余度高的训练集的大型神经网络，最好的办法就是使用小批量学习。</p>
 
     </div>
@@ -264,7 +268,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Gxliu</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
     </div>
@@ -272,7 +276,7 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -283,6 +287,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
 
