@@ -117,7 +117,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -164,6 +164,129 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/10/23/%E7%AE%97%E6%B3%95%E5%9C%A8%E8%AE%A1%E7%AE%97%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gxliu">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gxliu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/23/%E7%AE%97%E6%B3%95%E5%9C%A8%E8%AE%A1%E7%AE%97%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8/" class="post-title-link" itemprop="url">算法在计算中的作用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-10-23 15:48:22 / 修改时间：17:23:26" itemprop="dateCreated datePublished" datetime="2021-10-23T15:48:22+08:00">2021-10-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="算法">算法</h1>
+<p>不正确的算法对于某些输入实例可能根本不停机，也可能以不正确的输出停机，然而，不正确的算法只要其错误率可控有时可能是有用的。</p>
+<p>了解NP完全问题，避免花费时间在这些没有已知有效算法的问题上上，或者限定假设条件，给出一个近似解。</p>
+<p>物理限制使芯片时钟速度维持较稳定水平来避免熔化，为了每秒执行速度的提高，多核计算机成为必要，设计算法时必须考虑并行性，尽可能利用计算资源。</p>
+<p><strong>练习</strong></p>
+<p>answer</p>
+<p>1.1-1字典排序</p>
+<p>1.1-2空间利用率</p>
+<p>1.1-3链表，增删简单，查找费时</p>
+<p>1.1-4最短路径问题没有必须经过的节点。旅行商问题规定了必须经过的节点，要求给出经过这些节点的序。</p>
+<p>1.1-5</p>
+<h1 id="作为一种技术的算法">作为一种技术的算法</h1>
+<p>计算机是快的，但不是无限快的；存储器是廉价的，但不是免费的。所以计算时间是一种有限的资源，存储空间也一样。</p>
+<p>在大规模问题中，算法效率的提升比计算机硬件计算能力的提升更重要。</p>
+<p>现代计算机技术，硬件设计，GUI，网络，编译器等等均依赖算法。</p>
+<p>算法知识与技术是区分真正熟练的程序员与初学者的一个特征。</p>
+<p><strong>练习</strong></p>
+<p>answer</p>
+<p>1.2-1密码学的数字签名需要算法，SHA-2 。因为密钥对是唯一不可伪造的，因此可以用来防止篡改。</p>
+<p>1.2-2 <span class="math inline">\(8n^2 \leq 64nlgn\)</span> ，n = 2,3,4,5,6</p>
+<p>1.2-3 10</p>
+<p><strong>思考题</strong></p>
+<p>不同复杂度算法每秒解决的问题规模（假设，每单位规模计算消耗1毫秒时间）</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(lgn\)</span></th>
+<th><span class="math inline">\(\sqrt{n}\)</span></th>
+<th><span class="math inline">\(n\)</span></th>
+<th><span class="math inline">\(nlgn\)</span></th>
+<th><span class="math inline">\(n^2\)</span></th>
+<th><span class="math inline">\(n^3\)</span></th>
+<th><span class="math inline">\(2^n\)</span></th>
+<th><span class="math inline">\(n!\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1e1e6</td>
+<td>1e12</td>
+<td>1e6</td>
+<td>189481</td>
+<td>1000</td>
+<td>100</td>
+<td>19</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>lgn能解决的规模对于现实而言接近无限。太湖之光峰值性能不足1e16/s。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/10/22/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -187,10 +310,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-10-22 12:48:44 / 修改时间：19:04:49" itemprop="dateCreated datePublished" datetime="2021-10-22T12:48:44+08:00">2021-10-22</time>
+      <time title="创建时间：2021-10-22 12:48:44" itemprop="dateCreated datePublished" datetime="2021-10-22T12:48:44+08:00">2021-10-22</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-26 14:25:42" itemprop="dateModified" datetime="2021-10-26T14:25:42+08:00">2021-10-26</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -224,10 +353,15 @@
 <p><strong>如果 <em>x</em> 是一棵有 <em>n</em> 个节点的子树的根，那么调用 INORDER-TREE-WALK(x) 需要 <span class="math inline">\(\Theta (n)\)</span> 时间</strong></p>
 <p><strong>证明</strong> 每个节点都需要访问因此总时间 $ T(n) = (n)$ 。</p>
 <p>对于空树，只需要一个小的常数时间（因为 x <span class="math inline">\(\neq\)</span> NIL），设为 c ，所以 <span class="math inline">\(T(0)=c\)</span> 。</p>
-<p>n &gt; 0 ，假设 x 的左子树右 k 个节点，则右子树有 n-k-1 个节点。$T(n) T(k) + T(n-k-1) + d $, <span class="math inline">\(d\)</span> 为常数 ，<span class="math inline">\(d\)</span> &gt; 0 。这个不等式表明了总用时的一个上限（不包括递归调用的用时）</p>
-<p>现在要证 <span class="math inline">\(T(n) = O(n)\)</span> ，需证 <span class="math inline">\(T(n) \leq (c+d)n+c\)</span> 。n=0显然成立。n&gt;0 ，有$ T(n) T(k)+T(n-k-1)+d=((c+d)k+c)+((c+d)(n-k-1)+c)+d=(c+d)n+c-(c+d)+c+d=(c+d)n+c$</p>
-<p>得证。</p>
-<p><em>存疑，n&gt;0，使用了<span class="math inline">\(T(n) = (c+d)n+c\)</span> ，得出<span class="math inline">\(T(n) \leq (c+d)n+c\)</span> ，用结果证明结果是对的，证明没有说服力</em></p>
+<p>n &gt; 0 ，假设 x 的左子树右 k 个节点，则右子树有 n-k-1 个节点。<span class="math display">\[T(n) \leq T(k) + T(n-k-1) + d\]</span>, <span class="math inline">\(d\)</span> 为常数 ，<span class="math inline">\(d\)</span> &gt; 0 。这个不等式表明了总用时的一个上限（不包括递归调用的用时）</p>
+<p>现在要证 <span class="math inline">\(T(n) = O(n)\)</span> ，需证 <span class="math inline">\(T(n) \leq (c+d)n+c\)</span> 。n=0显然成立。n&gt;0 ，有</p>
+<p><span class="math display">\[
+T(n) \leq T(k)+T(n-k-1)+d
+&amp;=((c+d)k+c)+((c+d)(n-k-1)+c)+d 
+\\&amp;=(c+d)n+c-(c+d)+c+d 
+\\&amp;=(c+d)n+c
+\]</span> 得证。</p>
+<p><em>存疑，n&gt;0，使用了 <span class="math inline">\(T(n) = (c+d)n+c\)</span> ，得出 <span class="math inline">\(T(n) \leq (c+d)n+c\)</span> ，用结果证明结果是对的，证明没有说服力</em></p>
 
       
     </div>
@@ -533,7 +667,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-22 19:20:23" itemprop="dateModified" datetime="2021-10-22T19:20:23+08:00">2021-10-22</time>
+        <time title="修改时间：2021-10-22 19:26:05" itemprop="dateModified" datetime="2021-10-22T19:26:05+08:00">2021-10-22</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -577,8 +711,8 @@
 S(t) + I(t) + R(t) = M
 \]</span></p>
 <p>以及： <span class="math display">\[
-\frac {dS(t)}{dt} = -\alpha S(t)I(t),\\
-    \frac {dI(t)}{dt} = \alpha S(t)I(t) - \beta I(t), \\
+\frac {dS(t)}{dt} = -\alpha S(t)I(t),\\\\
+    \frac {dI(t)}{dt} = \alpha S(t)I(t) - \beta I(t), \\\\
     \frac {dR(t)}{dt} = \beta I(t)
 \]</span></p>
 <p>(1)(2)为核心方程。</p>
@@ -632,10 +766,16 @@ S(t) + I(t) + R(t) = M
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-10-01 20:24:36 / 修改时间：21:20:29" itemprop="dateCreated datePublished" datetime="2021-10-01T20:24:36+08:00">2021-10-01</time>
+      <time title="创建时间：2021-10-01 20:24:36" itemprop="dateCreated datePublished" datetime="2021-10-01T20:24:36+08:00">2021-10-01</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-23 13:56:17" itemprop="dateModified" datetime="2021-10-23T13:56:17+08:00">2021-10-23</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -662,21 +802,34 @@ S(t) + I(t) + R(t) = M
 <table>
 <thead>
 <tr class="header">
-<th>keywords</th>
-<th>signal</th>
+<th style="text-align: center;">keywords</th>
+<th style="text-align: center;">signal</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Ctrl-c</td>
-<td>SIGINT</td>
+<td style="text-align: center;">Ctrl-c</td>
+<td style="text-align: center;">SIGINT</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ctrl-\</td>
+<td style="text-align: center;">SIGQUIT</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ctrl-z</td>
+<td style="text-align: center;">SIGSTOP</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">kill</td>
+<td style="text-align: center;">SIGTERM</td>
 </tr>
 </tbody>
 </table>
-<p>Ctrl-|SIGQUIT Ctrl-z|SIGSTOP kill|SIGTERM</p>
 <p><code>kill</code> command <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -TERM &lt;PID&gt;</span><br></pre></td></tr></table></figure></p>
 <p><code>SIGSTP</code>是<code>SIGSTOP</code>的终端简写版本</p>
-<p><code>fg</code>,<code>bg</code></p>
+<p><strong>暂停和后台执行程序</strong></p>
+<p><code>SIGDTOP</code>会让进程暂停。</p>
+<p><code>fg</code>,<code>bg</code>用来恢复暂停的工作，分别对应前台和后台。</p>
 <p><code>jobs</code></p>
 <p><code>pgrep</code></p>
 <p><code>$!</code></p>
@@ -729,10 +882,16 @@ S(t) + I(t) + R(t) = M
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-10-01 19:10:50 / 修改时间：20:22:44" itemprop="dateCreated datePublished" datetime="2021-10-01T19:10:50+08:00">2021-10-01</time>
+      <time title="创建时间：2021-10-01 19:10:50" itemprop="dateCreated datePublished" datetime="2021-10-01T19:10:50+08:00">2021-10-01</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-23 12:21:36" itemprop="dateModified" datetime="2021-10-23T12:21:36+08:00">2021-10-23</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -754,21 +913,21 @@ S(t) + I(t) + R(t) = M
     
     <div class="post-body" itemprop="articleBody">
           <p>MIT <em>The missing semester</em>课程 <a target="_blank" rel="noopener" href="https://missing.csail.mit.edu/2020/course-shell/">原文</a></p>
-<p>启动终端，出现命令提示符 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">missing:-$</span><br></pre></td></tr></table></figure> &gt;missing 是机器名。 ~ 是home目录简写，也是此时所在目录。 $ 表示以非root身份登陆。</p>
+<p>启动终端，出现命令提示符 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">missing:-$</span><br></pre></td></tr></table></figure> &gt; missing 是机器名。 ~ 是home目录简写，也是此时所在目录。 $ 表示以非root身份登陆。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ data</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>输入data后回车，显示时间。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo hello</span><br></pre></td></tr></table></figure> echo 接受一个参数并打印结果。shell中空格用来分隔多个参数。如果输入文本中有空格，应该使用单引号或双引号，也可以使用</p>
 </blockquote>
-<p>shell本身自带部分命令。此外，环境变量中记录了一些程序的路径。shell会通过环境变量查找需要的程序。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo $PATH</span><br></pre></td></tr></table></figure> &gt;显示环境变量。绝对路径，以:分隔。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ which echo</span><br></pre></td></tr></table></figure> &gt;查询echo所在路径 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /bin/echo $PATH</span><br></pre></td></tr></table></figure> &gt;通过绝对路径调用echo,打印<span class="math inline">\(PATH。这方法可以执行不在\)</span>PATH中的程序</p>
+<p>shell本身自带部分命令。此外，环境变量中记录了一些程序的路径。shell会通过环境变量查找需要的程序。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo $PATH</span><br></pre></td></tr></table></figure> &gt; 显示环境变量。绝对路径，以:分隔。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ which echo</span><br></pre></td></tr></table></figure> &gt; 查询echo所在路径 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /bin/echo $PATH</span><br></pre></td></tr></table></figure> &gt; 通过绝对路径调用echo,打印<span class="math inline">\(PATH。这方法可以执行不在\)</span>PATH中的程序</p>
 <p>通常，执行程序会在当前目录下操作，除非我们告诉它其他信息。</p>
 <p>重定向 <code>&lt; file</code> 和 <code>&gt; file</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo hello &gt; hello.txt</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>将echo的输出定向到hello.txt，，hello.txt代替屏幕成为标准输出 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &lt; hello.txt</span><br></pre></td></tr></table></figure> hello.txt 的内容作为输入进入cat <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &lt; hello.txt &gt; hello2.txt</span><br></pre></td></tr></table></figure> 从左向右依次执行，先将hello.txt作为输入给到cat,然后cat的输出在送到hello2.txt</p>
 </blockquote>
-<p><code>&gt; file</code> &gt;会覆盖原有的数据，相当于删去原数据，写入新内容</p>
+<p><code>&gt; file</code> &gt; 会覆盖原有的数据，相当于删去原数据，写入新内容</p>
 <p><code>&gt;&gt; file</code> &gt;追加模式，不会覆盖</p>
-<p><code>|</code> &gt;管道。管道左边程序的输出会做为右边程序的输入，这可以同时使用多个工具处理任务。</p>
+<p><code>|</code> &gt; 管道。管道左边程序的输出会做为右边程序的输入，这可以同时使用多个工具处理任务。</p>
 <hr />
 <p>挂载于<code>/sys</code>目录之下的是<code>sysfs</code> 文件系统。<code>sysfs</code>以文件形式公开了一部分内核参数</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo find -L /sys/class/backlight -maxdepth 2 -name &#x27;*brightness*&#x27;</span><br><span class="line">/sys/class/backlight/thinkpad_screen/brightness</span><br><span class="line">$ cd /sys/class/backlight/thinkpad_screen</span><br><span class="line">$ sudo echo 3 &gt; brightness</span><br><span class="line">An error occurred while redirecting file &#x27;brightness&#x27;</span><br><span class="line">open: Permission denied</span><br></pre></td></tr></table></figure>
@@ -914,84 +1073,6 @@ S(t) + I(t) + R(t) = M
 <p>登入之后请务必更新源，更新软件，更新系统。以ubuntu为例，以root身份执行以下命令 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get update</span><br><span class="line">$ apt-get upgrade</span><br><span class="line">$ apt-get dist-upgrade</span><br></pre></td></tr></table></figure> 如果要添加用户，根据不同系统查询操作，以ubuntu为例 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adduser username</span><br></pre></td></tr></table></figure> 之后按要求填写密码（记好密码），其他一路回车 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">usermod -aG sudo username # 把对应用户添加到sudo用户组中，这很重要！</span><br><span class="line">su username # 从root切换到对应用户，想切回去，直接exit,断开服务器也是exit</span><br></pre></td></tr></table></figure></p>
 <hr />
 <p>现在已经可以方便地远程链接服务器了，之后想怎么折腾看自己了。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/09/21/General-recommended-practies-for-AI/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Gxliu">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gxliu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/21/General-recommended-practies-for-AI/" class="post-title-link" itemprop="url">General recommended practies for AI</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-09-21 22:37:13" itemprop="dateCreated datePublished" datetime="2021-09-21T22:37:13+08:00">2021-09-21</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-09-30 18:46:57" itemprop="dateModified" datetime="2021-09-30T18:46:57+08:00">2021-09-30</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="推荐训练">推荐训练</h1>
-<p>使用以人类为中心的设计方法</p>
-<ul>
-<li>设计内置功能时应当适当公开：清晰和可控对于良好的用户体验非常重要</li>
-<li>考虑增加和帮助：如果一个答案的概率很高并且能满足大量不同的使用者和案例，那么只给一个答案是合适的。在其他情况下， 系统提供多个选项给用户可能是最好的选择。技术上，从一个答案上要获得较高的精度肯定比多个答案要困难许多。</li>
-<li>在设计过程的早期对潜在的不利反馈进行建模，然后在全面部署之前对一小部分流量进行实时测试和迭代。</li>
-<li>与一组不同的用户和用户方案进行互动，并在项目开发之前和整个过程中纳入反馈。这将为项目构建丰富的用户视角，并增加受益于该技术的人数</li>
-</ul>
 
       
     </div>
