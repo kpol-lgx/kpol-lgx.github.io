@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kpol-lgx.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="基本框架：引入算法，伪代码说明，证明，复杂度分析 2.1插入排序 从乱序组中选一张，正确地放入顺序组。该算法原址排序输入的数：算法在数组Az中重排这些数，并且在任何时候只有常数个数字存储在数组外。 123456789INSERTION-SORT(A):for j &#x3D; 2 to A.length	key &#x3D; A[j]	&#x2F;&#x2F; Insert A[j] into the sorted sequence A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第二章-算法基础">
+<meta property="og:url" content="https://kpol-lgx.github.io/2021/11/01/algorithm-2-%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Gxliu">
+<meta property="og:description" content="基本框架：引入算法，伪代码说明，证明，复杂度分析 2.1插入排序 从乱序组中选一张，正确地放入顺序组。该算法原址排序输入的数：算法在数组Az中重排这些数，并且在任何时候只有常数个数字存储在数组外。 123456789INSERTION-SORT(A):for j &#x3D; 2 to A.length	key &#x3D; A[j]	&#x2F;&#x2F; Insert A[j] into the sorted sequence A">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-01T13:13:10.000Z">
+<meta property="article:modified_time" content="2021-11-04T13:48:24.602Z">
+<meta property="article:author" content="Gxliu">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kpol-lgx.github.io/2021/11/01/algorithm-2-%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kpol-lgx.github.io/2021/11/01/algorithm-2-%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/","path":"2021/11/01/algorithm-2-算法基础/","title":"第二章-算法基础"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>第二章-算法基础 | Gxliu</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Gxliu</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">2.1插入排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">2.2分析算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%B2%BB%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">2.3.1 分治法</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Gxliu</p>
+  <div class="site-description" itemprop="description">个人博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/11/01/algorithm-2-%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gxliu">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gxliu">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          第二章-算法基础
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-01 21:13:10" itemprop="dateCreated datePublished" datetime="2021-11-01T21:13:10+08:00">2021-11-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-11-04 21:48:24" itemprop="dateModified" datetime="2021-11-04T21:48:24+08:00">2021-11-04</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><em>基本框架：引入算法，伪代码说明，证明，复杂度分析</em></p>
+<h1 id="插入排序">2.1插入排序</h1>
+<p>从乱序组中选一张，正确地放入顺序组。该算法<strong>原址</strong>排序输入的数：算法在数组Az中重排这些数，并且在任何时候只有常数个数字存储在数组外。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">INSERTION-SORT(A):</span><br><span class="line">for j = 2 to A.length</span><br><span class="line">	key = A[j]</span><br><span class="line">	// Insert A[j] into the sorted sequence A[1..j-1].</span><br><span class="line">	i = j - 1</span><br><span class="line">	while i &gt; 0 and A[i] &gt; key</span><br><span class="line">		A[i + 1] = A[i]</span><br><span class="line">		i = i - 1</span><br><span class="line">	A[i + 1] = key</span><br></pre></td></tr></table></figure>
+<p>从上述伪代码可以看出，包含元素A[1..j-1]的子数组在每次for循环之前和之后都是按序排列，我们可以将这种性质表示为一个<strong>循环不变式</strong> 。</p>
+<p>循环不变式成立需要证明：</p>
+<ol type="1">
+<li>初始化：循环第一次迭代之前，它为真</li>
+<li>如果循环的某次迭代之前为真，那么下次迭代之前为真</li>
+<li>循环终止时，不变式为我们提供一个有用的性质，该性质有助于证明算法是正确的。</li>
+</ol>
+<p>利用循环不变式即可证明算法的正确性。</p>
+<p><strong>练习</strong></p>
+<p>answer</p>
+<p>2.1-2</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">INSERTION-SORT-REVERSE(A):</span><br><span class="line">for j = 2 to A.length</span><br><span class="line">	key = A[j]</span><br><span class="line">	i = j - 1</span><br><span class="line">	while i &gt; 0 and A[i] &lt; key</span><br><span class="line">		A[i + 1] = A[i]</span><br><span class="line">		i = i - 1</span><br><span class="line">	A[i + 1] = key</span><br></pre></td></tr></table></figure>
+<p>2.1-3</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">LINERA-SEARCH(A, v):</span><br><span class="line">for i = 1 to A.length</span><br><span class="line">	if (A[i] == v)</span><br><span class="line">		print(i)</span><br><span class="line">		break</span><br><span class="line">	else if (i == A.length)</span><br><span class="line">		print(NIL)</span><br><span class="line">		break</span><br></pre></td></tr></table></figure>
+<p>从伪代码可知，以 i 为界，数组A中下标小于 i 的全都不符合要求，并且循环有终止，这就构成一个循环不变式。</p>
+<p>现证明：</p>
+<ol type="1">
+<li>初始化：很明显循环开始之前没有小于 i 的元素，因此符合</li>
+<li>保持：循环不被打断时，能够计入左侧的元素都经过比较，是不符合的</li>
+<li>终止：终止的情况有两种，找到 i 或者抵达末尾，已经完成要求，成立。</li>
+</ol>
+<p>2.1-4</p>
+<p>假设按照小端存储，从左向右，分别相加，如有进位，加到下一位上。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BINARY-ADD(A,B):</span><br><span class="line">l = 0</span><br><span class="line">for i = 1 to A.length</span><br><span class="line">	k = A[i] + B[i] + l</span><br><span class="line">	l = k % 2</span><br><span class="line">	h = k / 2</span><br><span class="line">	C[i] = h</span><br><span class="line">C[I+1] = L</span><br></pre></td></tr></table></figure>
+<h1 id="分析算法">2.2分析算法</h1>
+<p>RAM 随机访问机，单处理计算模型，作为之后算法的实现技术，没有并发操作。</p>
+<p>输入规模的最佳概念依赖于研究的问题。对于排序，就是输入的数据项数；如果输入是图，就是边数和顶点数。</p>
+<p>通常我们只考虑最坏情况运行时间，而真正使我们感兴趣的应该是运行时间的增长率或增长量级。</p>
+<p><strong>练习</strong></p>
+<p>answer</p>
+<p>2.2-1 <span class="math inline">\(\Theta (n^3)\)</span></p>
+<p>2.2-2</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CHOOSE-SORT(A):</span><br><span class="line">for i = 1 to A.length - 1:</span><br><span class="line">	Min = MAX</span><br><span class="line">	for j = i to A.length:</span><br><span class="line">		if A[j] &lt; Min:</span><br><span class="line">			Min = A[j]</span><br><span class="line">			h = j</span><br><span class="line">	A[h] = A[i]</span><br><span class="line">	A[i] = Min</span><br></pre></td></tr></table></figure>
+<p>该算法维持的循环不变式是，在每次交换前，前i个数必定已经排好序，同时，交换之后前i+1个数字也必定排好序，并且终止循环时得到已经排好序的序列。</p>
+<p>由于每次寻找的都是A[i..A.length]中的最小值，因此当前n-1个最小值都被找到之后，剩下的最后一个必然就是最大值。</p>
+<p>时间复杂度：每次找最小值必定需要遍历剩下的所有未排序的值，因此不论何种情况下，时间复杂度均为 <span class="math inline">\(\Theta(\frac{n(n+1)}{2})\)</span> 即 <span class="math inline">\(\Theta(n^2)\)</span></p>
+<p>2.2-3</p>
+<p>既然等可能地为数组中任意元素，那么，将数组一分为二，出现在左或右的概率是相等的，因此平均来看，可以认为出现在中间，也就是说，每次需要查找的元素数大约为总体的一半。最坏情况则是每次都需要查找全部的元素才能确定。</p>
+<p>平均情况：<span class="math inline">\(\Theta(\frac{n}{2})\)</span> 也即<span class="math inline">\(\Theta(n)\)</span></p>
+<p>最坏情况：<span class="math inline">\(\Theta(n)\)</span></p>
+<p>2.2-4</p>
+<p>最好情况通常是输入就是答案。优化最坏运行时间更复杂，通常要减少循环层数。</p>
+<h2 id="分治法">2.3.1 分治法</h2>
+<p>递归算法：为了解决一个给定的问题，算法一次或多次递归调用自身来解决紧密相关的若干子问题。</p>
+<p>分治：将原问题分解为几个规模较小但类似于原问题的子问题，递归求解这些子问题，然后合并这些解来建立原问题的解。</p>
+<ul>
+<li>分解</li>
+<li>递归求解（规模足够小时，直接求解）</li>
+<li>合并（精髓所在）</li>
+</ul>
+<p>比如归并算法：</p>
+<p>先将序列分为相等数量的两半，使用归并排序递归排序左右子列，最后将两个已排序的子序列合并为一个序列。</p>
+<p>序列长度为1时，认为已经排序好，不必处理。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">MERAGE(A, p, q, r)</span><br><span class="line">n1 = q - p + 1</span><br><span class="line">n2 = r - q</span><br><span class="line">let L[1..n1 + 1] and R[1.. n2 + 1] be new arrays</span><br><span class="line">//额外申请空间复制数组</span><br><span class="line">for j = 1 to n1</span><br><span class="line">	L[j] = A[p + i - 1]</span><br><span class="line">for j = 1 to n2</span><br><span class="line">	R[j] = A[q + j]</span><br><span class="line">//哨兵，MAX+1 可以认为是无穷大</span><br><span class="line">L[n1 + 1] = MAX+1</span><br><span class="line">R[n2 + 1] = MAX+1</span><br><span class="line">i = 1</span><br><span class="line">j = 1</span><br><span class="line">for k = p to r</span><br><span class="line">	if L[i] &lt;= R[j]</span><br><span class="line">		A[k] = L[i]</span><br><span class="line">		i = i + 1</span><br><span class="line">	else</span><br><span class="line">		A[k] = R[j]</span><br><span class="line">		j = j + 1</span><br></pre></td></tr></table></figure>
+<p>因为循环次数限制，哨兵不能被复制回数组。合并操作的复杂度是<span class="math inline">\(\Theta(n)\)</span></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MERGE-SORT(A, p, r)</span><br><span class="line">if p &lt; r</span><br><span class="line">	q = floor((p+r)/2)//floor向下取整</span><br><span class="line">	MERGE-SORT(A, p, q)</span><br><span class="line">	MERGE-SORT(A, q+1, r)</span><br><span class="line">	MERGE(A, p, q, r)</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/10/27/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8/" rel="prev" title="Note">
+                  <i class="fa fa-chevron-left"></i> Note
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/11/01/Pro-Git-Git%E5%9F%BA%E7%A1%80/" rel="next" title="Pro-Git-Git基础">
+                  Pro-Git-Git基础 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gxliu</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

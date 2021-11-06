@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kpol-lgx.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="获取Git仓库  本地目录转换为Git仓库 克隆  在已存在的目录中初始化仓库 windows上 1$ cd &#x2F;c&#x2F;user&#x2F;my_project 跳转到指定目录下，然后 1$ git init 这时.git子目录已被创建，但是文件还没有被跟踪 之后应该追踪目录下的文件并进行初始提交。git add 命令指定需要被追踪的文件，然后git commit 。现在我们已经获得一个拥有追踪文件和初始提交的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pro-Git-Git基础">
+<meta property="og:url" content="https://kpol-lgx.github.io/2021/11/01/Pro-Git-Git%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Gxliu">
+<meta property="og:description" content="获取Git仓库  本地目录转换为Git仓库 克隆  在已存在的目录中初始化仓库 windows上 1$ cd &#x2F;c&#x2F;user&#x2F;my_project 跳转到指定目录下，然后 1$ git init 这时.git子目录已被创建，但是文件还没有被跟踪 之后应该追踪目录下的文件并进行初始提交。git add 命令指定需要被追踪的文件，然后git commit 。现在我们已经获得一个拥有追踪文件和初始提交的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-01T14:23:54.000Z">
+<meta property="article:modified_time" content="2021-11-01T15:09:48.546Z">
+<meta property="article:author" content="Gxliu">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kpol-lgx.github.io/2021/11/01/Pro-Git-Git%E5%9F%BA%E7%A1%80/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kpol-lgx.github.io/2021/11/01/Pro-Git-Git%E5%9F%BA%E7%A1%80/","path":"2021/11/01/Pro-Git-Git基础/","title":"Pro-Git-Git基础"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Pro-Git-Git基础 | Gxliu</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Gxliu</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96git%E4%BB%93%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">获取Git仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%B7%B2%E5%AD%98%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%AD%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">在已存在的目录中初始化仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8B%E9%9A%86"><span class="nav-number">1.2.</span> <span class="nav-text">克隆</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">记录每次更新到仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%9F%E8%B8%AA%E6%96%B0%E6%96%87%E4%BB%B6"><span class="nav-number">2.1.</span> <span class="nav-text">跟踪新文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9A%82%E5%AD%98%E5%B7%B2%E4%BF%AE%E6%94%B9%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">暂存已修改的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8C%96%E8%BE%93%E5%87%BA"><span class="nav-number">2.3.</span> <span class="nav-text">简化输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6"><span class="nav-number">2.4.</span> <span class="nav-text">忽略文件</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Gxliu</p>
+  <div class="site-description" itemprop="description">个人博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/11/01/Pro-Git-Git%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gxliu">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gxliu">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Pro-Git-Git基础
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-01 22:23:54 / 修改时间：23:09:48" itemprop="dateCreated datePublished" datetime="2021-11-01T22:23:54+08:00">2021-11-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Pro-Git/" itemprop="url" rel="index"><span itemprop="name">Pro Git</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="获取git仓库">获取Git仓库</h1>
+<ol type="1">
+<li>本地目录转换为Git仓库</li>
+<li>克隆</li>
+</ol>
+<h2 id="在已存在的目录中初始化仓库">在已存在的目录中初始化仓库</h2>
+<p>windows上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd /c/user/my_project</span><br></pre></td></tr></table></figure>
+<p>跳转到指定目录下，然后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<p><em>这时.git子目录已被创建，但是文件还没有被跟踪</em></p>
+<p>之后应该追踪目录下的文件并进行初始提交。<code>git add</code> 命令指定需要被追踪的文件，然后<code>git commit</code> 。现在我们已经获得一个拥有追踪文件和初始提交的仓库。</p>
+<h2 id="克隆">克隆</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone &lt;url&gt;</span><br></pre></td></tr></table></figure>
+<p>url 仓库地址，尖括号在实际地址中没有。</p>
+<p>url 后面可以在添加一个参数，用于重命名仓库。所有参数均以空格分隔。</p>
+<p>Git支持多种数据传输协议。</p>
+<h1 id="记录每次更新到仓库">记录每次更新到仓库</h1>
+<p>工作目录下的文件不外乎两种状态：已追踪或未追踪。已追踪文件已经被纳入版本控制，在上一次快照中有他们的记录，工作一段时间后，他们的状态可能是，未修改，已修改或已放入暂存区。</p>
+<p>正常工作流程是，处理文件后，选择性地将文件放入暂存区，然后提交，如此反复。</p>
+<p><code>git status</code> （不带参数）可以查看各个文件状态</p>
+<h2 id="跟踪新文件">跟踪新文件</h2>
+<p><code>git add filename</code> 即可</p>
+<h2 id="暂存已修改的文件">暂存已修改的文件</h2>
+<p>这是<code>git add</code>的另一个功能</p>
+<p><code>git add filename</code></p>
+<p>将这个命令理解为“精确地将内容添加的下一次提交中”。注意暂存的只是文件的这一个对应版本，之后再修改，那么git status又会显示这个文件没有提交，其实是指修改后的新版本没有提交。</p>
+<h2 id="简化输出">简化输出</h2>
+<p>git status的消息总是非常长，加上 -s 或者 --short 可以获得简化输出。</p>
+<p>每个文件前面会有一个状态栏表明其状态：</p>
+<p>?? 表示新添加的未追踪文件</p>
+<p>M 表示文件已修改</p>
+<p>A 表示文件新添加到暂存区（git add）</p>
+<p>状态栏共两列，左栏指明暂存区状态，右栏指明工作区状态。</p>
+<h2 id="忽略文件">忽略文件</h2>
+<p>创建一个名为 .gitignore 的文件，其中的内容可以是正则表达式，git会自动找到匹配的文件并且将其忽略，注意一个或者一类文件占一行。</p>
+<p>.gitignore文件格式规范</p>
+<ul>
+<li>所有空行以及以#号开头的行都会被git忽略（也就是文件注释）</li>
+<li>可以使用标准的glob模式匹配，这将递归地应用在整个工作区中</li>
+<li>匹配模式以（/）开始防止递归</li>
+<li>匹配模式可以以（/）结尾指定目录</li>
+<li>要忽略指定模式以外的文件，可以在模式前加上叹号（!）取反</li>
+</ul>
+<p>glob模式是指shell使用的简化了的正则表达式。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/01/algorithm-2-%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" rel="prev" title="第二章-算法基础">
+                  <i class="fa fa-chevron-left"></i> 第二章-算法基础
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/11/05/%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" rel="next" title="哈夫曼编码">
+                  哈夫曼编码 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gxliu</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
