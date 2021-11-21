@@ -117,18 +117,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -157,6 +157,437 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/11/21/vim-tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gxliu">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gxliu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/21/vim-tips/" class="post-title-link" itemprop="url">vim-tips</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-21 11:39:57 / 修改时间：12:18:41" itemprop="dateCreated datePublished" datetime="2021-11-21T11:39:57+08:00">2021-11-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="indent-a-code-block">Indent a code block</h1>
+<p>源地址：https://vim.fandom.com/wiki/Indent_a_code_block</p>
+<ul>
+<li><code>=i&#123;</code> 该操作在vim普通模式下执行，可以将光标所在的代码块的内部自动处理为正常的缩进，但是不会处理包围代码块的花括号。<strong>具体来说，vim将花括号所在的那两行视为一部分，将花括号包围的部分（不含花括号）视为另一部分，这里的<em>处理花括号</em>是指处理花括号所在的那两行，<em>不处理</em>是指不处理花括号，只处理内部文本。所以如果写 if 语句偷懒少了那个回车，之后处理反而方便了。</strong> （Q: 那要是花括号和文本在同一行呢？A:怎么这么多问题。。。把花括号在那一行当作文本部分即可）</li>
+<li><code>=a&#123;</code> 和上一个一样，区别在于这个会处理花括号</li>
+<li><code>=2a&#123;</code> 处理光标所在的块和包围光标的块，花括号都会被处理，这个数字2还可以继续增加</li>
+</ul>
+<p>以上三个操作都需要使用<code>&#123;</code> ，但是这个字符不怎么好打，所以可以用<code>&#125;</code> 和<code>B</code> 这两者之一去替换<code>&#123;</code> 。（但是看起来都不怎么方便。。。。）</p>
+<p>以上是自动处理，如果需要精细控制，那么：</p>
+<ul>
+<li><code>&gt;i&#123;</code> vim普通模式下的操作，光标所在块内部全体向右缩进一个单位，具体缩进多少取决于你的设置。这个不会处理花括号。</li>
+<li><code>&lt;i&#123;</code> 和上一个相对应，这个是向左缩进一个单位。</li>
+<li><code>.</code> 以上操作配合 <code>.</code> （重复上一次命令）可以发挥出强大的威力。</li>
+</ul>
+<p>如果你的光标非常巧地落在了 <code>&#123;</code> 或者 <code>&#125;</code>上， 那么：</p>
+<ul>
+<li><code>=%</code> 自动处理匹配的整个代码块（花括号及内部），调整为合适的缩进</li>
+<li><code>&gt;%</code> 或者 <code>&lt;%</code> 向右或者向左缩进整个块，</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/11/20/Linux-commandline-and-Shell-Tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gxliu">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gxliu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/20/Linux-commandline-and-Shell-Tutorial/" class="post-title-link" itemprop="url">Linux commandline and Shell Tutorial</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-20 10:27:31 / 修改时间：10:40:42" itemprop="dateCreated datePublished" datetime="2021-11-20T10:27:31+08:00">2021-11-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ol type="1">
+<li><p><em>man -k 关键字</em> ：关键字搜索需要的命令</p></li>
+<li><p><em>cd -</em> ：切换到上次所处的目录下，高效</p></li>
+<li><p>ls : -F 区分文件和目录，-a 显示隐藏文件，-R 递归，-l 显示更多信息。合并选项使用 -alF。-d 列出目录本身信息，但不列出其中的内容</p></li>
+<li><p>ls 也支持过滤器，即正则</p></li>
+<li><p><em>cp</em> ：无论何时加上 -i （覆盖前询问）</p></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/11/20/archlinux-package-cache/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gxliu">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gxliu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/20/archlinux-package-cache/" class="post-title-link" itemprop="url">archlinux-package-cache</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-20 09:37:51 / 修改时间：10:02:01" itemprop="dateCreated datePublished" datetime="2021-11-20T09:37:51+08:00">2021-11-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>https://wiki.archlinux.org/title/Pacman#Cleaning_the_package_cache</p>
+<p>通过pacman 安装的软件的包（同一个包的多个不同版本也会保留）不会被删除，这样可以实现快速降级，在软件崩溃时救你一命，并且重新安装已经删除的软件也会非常方便。</p>
+<p>然而存储空间是有限的。。。</p>
+<hr />
+<p><em>开始清理</em></p>
+<ol type="1">
+<li><p>```bash paccache -r <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   默认情况下，所有软件包（已构建和未安装的）的最近三个版本保留，其余删除。</span><br><span class="line"></span><br><span class="line">2. 启用或者使用`paccache.timer`，可以每周检查并删除不使用的包</span><br><span class="line"></span><br><span class="line">3. ```</span><br><span class="line">   paccache -rk1</span><br></pre></td></tr></table></figure></p>
+<p>只保留最近一个版本</p></li>
+<li><p><code>paccache -h</code> more help</p></li>
+</ol>
+<hr />
+<p><em>更加强大的清理工具</em></p>
+<p>pkgcacheclean</p>
+<p>https://aur.archlinux.org/packages/pkgcacheclean/</p>
+<p>pacleaner</p>
+<p>https://aur.archlinux.org/packages/pacleaner/</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/11/19/plugins-for-vim/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gxliu">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gxliu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/19/plugins-for-vim/" class="post-title-link" itemprop="url">plugins for vim</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-19 22:02:53 / 修改时间：23:50:01" itemprop="dateCreated datePublished" datetime="2021-11-19T22:02:53+08:00">2021-11-19</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="获取插件帮助文档">获取插件帮助文档</h1>
+<p>help <plugin-name></p>
+<h1 id="vim-airline">vim-airline</h1>
+<p>When the plugin is correctly loaded, there will be a nice statusline at the bottom of each vim window.</p>
+<h1 id="vim-airline-theme">vim-airline-theme</h1>
+<p>Once installed, use <code>:AirlineTheme &lt;theme&gt;</code> to set the theme, e.g. <code>:AirlineTheme simple</code></p>
+<p>To set in .vimrc, use <code>let g:airline_theme='&lt;theme&gt;'</code>, e.g. <code>let g:airline_theme='simple'</code></p>
+<p><strong>Note:</strong> The command <code>:AirlineTheme</code> is only available, if you have also cloned and installed the main <a target="_blank" rel="noopener" href="https://github.com/vim-airline/vim-airline">vim-airline</a> repository.</p>
+<h1 id="vim-ale">vim-ale</h1>
+<p>ALE (Asynchronous Lint Engine) is a plugin providing linting (syntax checking and semantic errors)</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/11/08/2021-%E6%9D%8E%E5%AE%8F%E6%AF%85-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gxliu">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gxliu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/08/2021-%E6%9D%8E%E5%AE%8F%E6%AF%85-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">2021-李宏毅-机器学习</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-08 22:16:15" itemprop="dateCreated datePublished" datetime="2021-11-08T22:16:15+08:00">2021-11-08</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-11-09 14:05:11" itemprop="dateModified" datetime="2021-11-09T14:05:11+08:00">2021-11-09</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%8E%E5%AE%8F%E6%AF%85-2021/" itemprop="url" rel="index"><span itemprop="name">李宏毅-2021</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>General Guide</p>
+<ol type="1">
+<li><p>loss on <strong>training data</strong> (large or small)</p></li>
+<li><p><em>large</em> : <strong>model bias</strong></p>
+<ol type="a">
+<li>the model is too small</li>
+</ol>
+<p>solution: more features</p>
+<p><em>large</em> : <strong>optimization issue</strong></p>
+<ol start="2" type="a">
+<li>local min（局部最小值）</li>
+</ol></li>
+</ol>
+<hr />
+<p>judge: model bias v.s. optimization issue</p>
+<ul>
+<li>start from shallower networks(or other models), which are easier to optimize.如果层数提高，模型能力会更强。当更强的模型没有达到预期结果时（特别是在训练资料上）就说明优化有问题。</li>
+</ul>
+<hr />
+<ol type="1">
+<li><p>...</p></li>
+<li><p>...</p></li>
+<li><p><em>small</em> :</p>
+<p>loss on testing data:</p>
+<ol type="1">
+<li><p>small -- finish</p></li>
+<li><p>large -- overfitting or mismatch</p>
+<p><strong>overfitting</strong> : 比如人为构造在训练资料上的0 loss 的function 。通常，层数越深的model 能力越强，需要的训练数据也越多（因为有更多参数需要训练）然而现实中往往无法提供足够的数据，这将导致部分参数随机化，这对于训练资料没有影响，但在测试资料上会导致不可预知的结果。</p>
+<p>solution:</p>
+<ol type="1">
+<li>more training data : collection (<strong>waste time</strong>); data augmentation(<strong>good</strong>)根据对资料的分析，模型的理解，将现有数据改造从而获得新的数据</li>
+<li>constrained model: 修改模型，使之符合预期结果（比如尽可能降低模型的能力同时保证结果正确性(not too much)。<strong>减少参数，共享参数; early stop; less features ; regularization ; dropout </strong>）</li>
+</ol>
+<p><strong>mismatch</strong> : 训练资料和测试资料不匹配。需要自行分析资料。</p></li>
+</ol></li>
+</ol>
+<hr />
+<p>CNN，处理图像的特化FNN</p>
+<hr />
+<p>model应该对于其应用场景下的随机数据有较好的表现，在特定数据集上的model往往毫无用处。</p>
+<p>因此要避免在同一数据集上训练过多次。</p>
+<hr />
+<h3 id="n-fold-cross-validation">N-fold Cross Validation</h3>
+<p>更好的方法</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -598,7 +1029,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/10/23/algorithm-1-%E7%AE%97%E6%B3%95%E5%9C%A8%E8%AE%A1%E7%AE%97%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/10/26/What-is-Machine-Learning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -611,7 +1042,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/23/algorithm-1-%E7%AE%97%E6%B3%95%E5%9C%A8%E8%AE%A1%E7%AE%97%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8/" class="post-title-link" itemprop="url">算法在计算中的作用</a>
+          <a href="/2021/10/26/What-is-Machine-Learning/" class="post-title-link" itemprop="url">What is Machine Learning?</a>
         </h2>
 
         <div class="post-meta-container">
@@ -622,14 +1053,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-10-23 15:48:22" itemprop="dateCreated datePublished" datetime="2021-10-23T15:48:22+08:00">2021-10-23</time>
+      <time title="创建时间：2021-10-26 22:28:06" itemprop="dateCreated datePublished" datetime="2021-10-26T22:28:06+08:00">2021-10-26</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-01 21:13:19" itemprop="dateModified" datetime="2021-11-01T21:13:19+08:00">2021-11-01</time>
+        <time title="修改时间：2021-11-08 22:46:23" itemprop="dateModified" datetime="2021-11-08T22:46:23+08:00">2021-11-08</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -637,7 +1068,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a>
+          <a href="/categories/%E5%90%B4%E6%81%A9%E8%BE%BE/" itemprop="url" rel="index"><span itemprop="name">吴恩达</span></a>
         </span>
     </span>
 
@@ -651,518 +1082,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="算法">算法</h1>
-<p>不正确的算法对于某些输入实例可能根本不停机，也可能以不正确的输出停机，然而，不正确的算法只要其错误率可控有时可能是有用的。</p>
-<p>了解NP完全问题，避免花费时间在这些没有已知有效算法的问题上上，或者限定假设条件，给出一个近似解。</p>
-<p>物理限制使芯片时钟速度维持较稳定水平来避免熔化，为了每秒执行速度的提高，多核计算机成为必要，设计算法时必须考虑并行性，尽可能利用计算资源。</p>
-<p><strong>练习</strong></p>
-<p>answer</p>
-<p>1.1-1字典排序</p>
-<p>1.1-2空间利用率</p>
-<p>1.1-3链表，增删简单，查找费时</p>
-<p>1.1-4最短路径问题没有必须经过的节点。旅行商问题规定了必须经过的节点，要求给出经过这些节点的序。</p>
-<p>1.1-5</p>
-<h1 id="作为一种技术的算法">作为一种技术的算法</h1>
-<p>计算机是快的，但不是无限快的；存储器是廉价的，但不是免费的。所以计算时间是一种有限的资源，存储空间也一样。</p>
-<p>在大规模问题中，算法效率的提升比计算机硬件计算能力的提升更重要。</p>
-<p>现代计算机技术，硬件设计，GUI，网络，编译器等等均依赖算法。</p>
-<p>算法知识与技术是区分真正熟练的程序员与初学者的一个特征。</p>
-<p><strong>练习</strong></p>
-<p>answer</p>
-<p>1.2-1密码学的数字签名需要算法，SHA-2 。因为密钥对是唯一不可伪造的，因此可以用来防止篡改。</p>
-<p>1.2-2 <span class="math inline">\(8n^2 \leq 64nlgn\)</span> ，n = 2,3,4,5,6</p>
-<p>1.2-3 10</p>
-<p><strong>思考题</strong></p>
-<p>不同复杂度算法每秒解决的问题规模（假设，每单位规模计算消耗1毫秒时间）</p>
-<table>
-<thead>
-<tr class="header">
-<th><span class="math inline">\(lgn\)</span></th>
-<th><span class="math inline">\(\sqrt{n}\)</span></th>
-<th><span class="math inline">\(n\)</span></th>
-<th><span class="math inline">\(nlgn\)</span></th>
-<th><span class="math inline">\(n^2\)</span></th>
-<th><span class="math inline">\(n^3\)</span></th>
-<th><span class="math inline">\(2^n\)</span></th>
-<th><span class="math inline">\(n!\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1e1e6</td>
-<td>1e12</td>
-<td>1e6</td>
-<td>189481</td>
-<td>1000</td>
-<td>100</td>
-<td>19</td>
-<td>8</td>
-</tr>
-</tbody>
-</table>
-<p>lgn能解决的规模对于现实而言接近无限。太湖之光峰值性能不足1e16/s。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/10/22/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Gxliu">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gxliu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/22/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="post-title-link" itemprop="url">12-二叉搜索树</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-10-22 12:48:44" itemprop="dateCreated datePublished" datetime="2021-10-22T12:48:44+08:00">2021-10-22</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-26 14:30:14" itemprop="dateModified" datetime="2021-10-26T14:30:14+08:00">2021-10-26</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>参考资料：算法导论</p>
-<p>二叉搜索树上的基本操作花费的时间和树的高度成正比。因此应当尽可能减小树的高度。</p>
-<h1 id="什么是二叉搜索树">什么是二叉搜索树</h1>
-<p>本质上是一个二叉树，每个节点包含五个属性：key，卫星数据，left，right，p 。中文翻译比较奇怪，个人理解 key 就是 键值对 中的键，卫星数据就是值。left ，对应左分叉，right 对应右分叉，p 是父指针（没有母指针），这三个倒是确定的。</p>
-<p>key的分布很有特点，左子树中的每一个key都不会比父节点的key大，右子树则全部大于父节点的key。</p>
-<p>递归搜索按序简单输出所有key:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INORDER-TREE-WALK(x)</span><br><span class="line">	if x != NIL</span><br><span class="line">		INORDER-TREE-WALK(x.left)</span><br><span class="line">		print x.key</span><br><span class="line">		INORDER-TREE-WALK(x.right)</span><br></pre></td></tr></table></figure>
-<p>这是中序遍历的伪代码。先序，中序，后序的区别在于子树的根的key在左右子树的key的哪个位置，中序会先输出左子树的全部key，然后是root的key，最后是右子树的key，对于子树的子树采用同样的方法。递归搜索。</p>
-<p>对于每个节点，搜索过程都会调用自身两次：一次是左子树，一次是右子树。</p>
-<p><strong>定理 12.1</strong></p>
-<p><strong>如果 <em>x</em> 是一棵有 <em>n</em> 个节点的子树的根，那么调用 INORDER-TREE-WALK(x) 需要 <span class="math inline">\(\Theta (n)\)</span> 时间</strong></p>
-<p><strong>证明</strong> 每个节点都需要访问因此总时间 $ T(n) = (n)$ 。</p>
-<p>对于空树，只需要一个小的常数时间（因为 x <span class="math inline">\(\neq\)</span> NIL），设为 c ，所以 <span class="math inline">\(T(0)=c\)</span> 。</p>
-<p>n &gt; 0 ，假设 x 的左子树右 k 个节点，则右子树有 n-k-1 个节点。<span class="math display">\[T(n) \leq T(k) + T(n-k-1) + d\]</span>, <span class="math inline">\(d\)</span> 为常数 ，<span class="math inline">\(d\)</span> &gt; 0 。这个不等式表明了总用时的一个上限（不包括递归调用的用时）</p>
-<p>现在要证 <span class="math inline">\(T(n) = O(n)\)</span> ，需证 <span class="math inline">\(T(n) \leq (c+d)n+c\)</span> 。n=0显然成立。n&gt;0 ，有</p>
-<p><span class="math display">\[
-T(n) \leq T(k)+T(n-k-1)+d
-=((c+d)k+c)+((c+d)(n-k-1)+c)+d 
-\\=(c+d)n+c-(c+d)+c+d 
-=(c+d)n+c
-\]</span> 得证。</p>
-<p><em>存疑，n&gt;0，使用了 <span class="math inline">\(T(n) = (c+d)n+c\)</span> ，得出 <span class="math inline">\(T(n) \leq (c+d)n+c\)</span> ，用结果证明结果是对的，证明没有说服力</em></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/10/21/Overview-of-mini-batch-gradient-descent/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Gxliu">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gxliu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/21/Overview-of-mini-batch-gradient-descent/" class="post-title-link" itemprop="url">Overview of mini-batch gradient descent</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-10-21 22:51:04 / 修改时间：23:31:35" itemprop="dateCreated datePublished" datetime="2021-10-21T22:51:04+08:00">2021-10-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="reminder-线性神经元的误差曲面">Reminder: 线性神经元的误差曲面</h1>
-<p>Reminder是立体3D的，水平面上是各个权重的变化，有一个垂直轴z轴对应误差变化。对于具有平方误差的线性神经元，这个图像是一个二次的碗（立体的盆）。</p>
-<p>多层，非线性神经元的误差曲面复杂的多。但是在局部，一个二次的碗的一部分通常可以作为一个非常好的近似。</p>
-<h1 id="误差曲面为二次的碗时全数据集训练的收敛速度">误差曲面为二次的碗时全数据集训练的收敛速度</h1>
-<p>除非椭圆是圆，否则最速下降的方向不会指向最小值。梯度总是在我们需要较小的移动距离时很大，在需要较大移动距离时则相反。即使在非线性的多层网络局部，误差曲面也是二次的，因此同样的解决方法可以被使用。</p>
-<h1 id="随机梯度下降法">随机梯度下降法</h1>
-<p>如果数据集高度冗余，那么前一半的梯度几乎和后一半相同。所以不必计算全部梯度，要更新权重，只需要计算前一半的梯度，然后用后一半计算再下一次的梯度，总之，轮流使用就对了。这种更新权重的方式的极端版本会在每个案例之后更新，被称为"online" 。</p>
-<p>小批量通常比 online 好，更新权重时前者有更少的计算，而且，同时为多个案例计算梯度采用矩阵乘法是非常高效的，特别是在GPUs上。</p>
-<h1 id="两种学习算法">两种学习算法</h1>
-<p>如果我们对于所有训练案例使用完全的梯度计算，这有相当多漂亮的方法加速学习。优化社区已经研究优化光滑非线性函数的普遍问题许多年了。不过多层神经网络并不是他们研究的问题的典型，因此他们的方法需要大量的修改。</p>
-<p>对于有非常大且冗余度高的训练集的大型神经网络，最好的办法就是使用小批量学习。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/10/21/sed/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Gxliu">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gxliu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/21/sed/" class="post-title-link" itemprop="url">sed</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-10-21 18:41:20" itemprop="dateCreated datePublished" datetime="2021-10-21T18:41:20+08:00">2021-10-21</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-22 19:03:49" itemprop="dateModified" datetime="2021-10-22T19:03:49+08:00">2021-10-22</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="overview">Overview</h1>
-<p>通常以这种方式启动</p>
-<p><code>sed SCRIPT INPUTFILE...</code></p>
-<p>SCRIPT 脚本，INPUTFILE 输入文件</p>
-<p>举例，将input.txt中的hello全部替换为world并且另存到output.txt</p>
-<p><code>sed 's/hello/world/ input.txt &gt; out.txt'</code></p>
-<p>如果不指定INPUTFILE，或者INPUTFILE用 - 代替，sed会过滤标准输入，比如键盘键入，的内容。以下命令均等价：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">&#x27;s/hello/world/&#x27;</span> input.txt &gt; output.txt</span><br><span class="line">sed <span class="string">&#x27;s/hello/world&#x27;</span> &lt; input.txt &gt; output.txt</span><br><span class="line">cat input.txt | sed <span class="string">&#x27;s/hello/world/&#x27;</span> - &gt; output.txt</span><br></pre></td></tr></table></figure>
-<p>sed将输出写到标准输出。使用 -i 选项在合适的地方修改文件而不是打印到标准输出。类似的，查W和 s//w 命令也会将输出写到其他文件。下面的命令将修改 file.txt文件而不产生任何输出</p>
-<p><code>sed -i 's/hello/world/' file.txt</code></p>
-<p>sed默认打印所有被处理的输入（不包括已经被像 d 这样的命令修改过的内容）。使用 -n 组织输出， p 命令打印指定行，以下命令仅仅打印输入文件的第45行。</p>
-<p><code>sed -n '45p' file.txt</code></p>
-<p>sed把多个输入文件当成一个长长的流。下面的例子打印第一个文件的第一行和最后一个文件的最后一行。使用 -s 反转这个行为。（译者注：怎么反转？反过来不一样吗？）</p>
-<p>没有 -e 或 -f 选项时，sed使用第一个非选项的参数作为<em>脚本</em> (script)，之后的非输入参量全部作为输入文件。如果 -e 或 -f 指定了<em>脚本</em>,所有非输入参量全部作为输入文件。选项 -e 和 -f 可以结合使用，并且能多次出现（在这种情况下最终生效的<em>脚本</em>是所有独立脚本的联合）</p>
-<p>以下实例全部等价：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">&#x27;s/hello/world/&#x27;</span> input.txt &gt; output.txt</span><br><span class="line">sed -e <span class="string">&#x27;s/hello/world/&#x27;</span> input.txt &gt; out.txt</span><br><span class="line">sed --expression=<span class="string">&#x27;s/hello/world/&#x27;</span> input.txt &gt; output.txt</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;s/hello/world/&#x27;</span> &gt; myscript.sed</span><br><span class="line">sed -f myscript.sed input.txt &gt; output.txt</span><br><span class="line">sed --file=myscript.sed input.txt &gt; ouput.txt</span><br></pre></td></tr></table></figure>
-<p>译者注：-e 是 --expression 的简写，功能一致。使用 -e ，后面的 's/hello/world/' 就是脚本。所以前三条命令相同，第六条写好脚本，7，8调用脚本。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/10/20/GNU-Octave-version-6-3-0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Gxliu">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gxliu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/20/GNU-Octave-version-6-3-0/" class="post-title-link" itemprop="url">GNU Octave (version 6.3.0)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-10-20 23:12:49" itemprop="dateCreated datePublished" datetime="2021-10-20T23:12:49+08:00">2021-10-20</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-21 13:34:27" itemprop="dateModified" datetime="2021-10-21T13:34:27+08:00">2021-10-21</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Translation/" itemprop="url" rel="index"><span itemprop="name">Translation</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Translation/Octave/" itemprop="url" rel="index"><span itemprop="name">Octave</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>这一章介绍了Octave的一些基本功能。</p>
-<p>命令行键入 octave 启动，octave cmdfile : octave 从cmdfile中读取内容执行其中的命令，完成之后退出。octave -h / octave --help 展示所有可用的启动选项并简单描述（--help相对详细）。</p>
-<p>键入exit 或 quit退出。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kpol-lgx.github.io/2021/10/20/SIR-%E4%BD%9C%E4%B8%9A/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Gxliu">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gxliu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/20/SIR-%E4%BD%9C%E4%B8%9A/" class="post-title-link" itemprop="url">SIR-作业</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-10-20 21:18:35" itemprop="dateCreated datePublished" datetime="2021-10-20T21:18:35+08:00">2021-10-20</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-27 13:16:43" itemprop="dateModified" datetime="2021-10-27T13:16:43+08:00">2021-10-27</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BC%88%E9%80%89%E4%BF%AE%EF%BC%89%E4%BD%9C%E4%B8%9A/" itemprop="url" rel="index"><span itemprop="name">数学建模（选修）作业</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>SIR型传染病模型的假设：</p>
-<ol type="1">
-<li><p>研究时间段内群体固定，总人数不发生变化，没有出生，死亡，迁入，迁出</p></li>
-<li><p>病人接触易感人群后会按照一定概率传染。传染概率与传染病本身性质，感染人数和易感人数三者有关</p></li>
-<li><p>疾病仅仅依靠人体自身免疫系统治愈，并且感染者痊愈后不会在感染</p></li>
-<li><p>传染病对于易感人群的传染能力不会随时间变化</p></li>
-</ol>
-<p>分析：</p>
-<p>假设有一座城市，总人口为 M ，现在有某种传染病 Ct 在城内传播，初始易感人群为 S = M ，初始感染人群为 I = I<sub>0</sub> ，初始痊愈人群为 R = 0。Ct 的感染系数为 <span class="math inline">\(\alpha\)</span> ，人群的恢复系数为 <span class="math inline">\(\beta\)</span> , <span class="math inline">\(\alpha\)</span> 和 <span class="math inline">\(\beta\)</span> 是常数。并且我们设不同人群的数量函数为</p>
-<ol type="1">
-<li>易感人群 S(t)<br />
-</li>
-<li>感染人群 I(t)<br />
-</li>
-<li>痊愈人群 R(t)</li>
-</ol>
-<p>在模型假设中，单位时间内易感人群中感染 Ct 的人数为 <span class="math inline">\(\alpha S(t)I(t)\)</span>，这是因为感染人数越多，可以同时接触感染者的易感人群也增加，感染速率提高；易感人数减少，会导致感染者不能接触到更多的易感者，因此感染速率下降。</p>
-<p>与之不同的是，单位时间内感染人群中痊愈的人数仅仅有恢复系数和感染人数有关，即 <span class="math inline">\(\beta I(t)\)</span></p>
-<p>显然有以下结论： <span class="math display">\[
-S(t) + I(t) + R(t) = M
-\]</span></p>
-<p>以及： <span class="math display">\[
-\frac {dS(t)}{dt} = -\alpha S(t)I(t),\\\\
-    \frac {dI(t)}{dt} = \alpha S(t)I(t) - \beta I(t), \\\\
-    \frac {dR(t)}{dt} = \beta I(t)
-\]</span></p>
-<p>(1)(2)为核心方程。</p>
-<p>从(2)可知，易感人群始终不断减少，痊愈人群始终不断增加，感染人群在起始段平方增长，并在之后由于易感人群数量减少而迅速减少。</p>
-<p><strong>代码</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">SIR</span><span class="params">(<span class="keyword">double</span> &amp;t, <span class="keyword">double</span> &amp;s, <span class="keyword">double</span> &amp;i, <span class="keyword">double</span> &amp;r)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> a, b, M;<span class="comment">//感染系数，恢复系数，总人口</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> T,S,I,R;<span class="comment">//传染持续时间，易感人群，感染人群，痊愈人群</span></span><br><span class="line">    cin &gt;&gt; T &gt;&gt; S &gt;&gt; I &gt;&gt; R;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    M = S + I + R;</span><br><span class="line">    <span class="built_in">SIR</span>(T, S, I, R);</span><br><span class="line">    cout &lt;&lt; S &lt;&lt; I &lt;&lt; R &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">SIR</span><span class="params">(<span class="keyword">double</span> &amp;t, <span class="keyword">double</span> &amp;s, <span class="keyword">double</span> &amp;i, <span class="keyword">double</span> &amp;r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (t &lt;= <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">double</span> <span class="keyword">s_t</span> = s - a*s*i;</span><br><span class="line">        <span class="keyword">double</span> <span class="keyword">i_t</span> = i + a*s*i - b*i;</span><br><span class="line">        <span class="keyword">double</span> <span class="keyword">r_t</span> = r + b*i;</span><br><span class="line">        <span class="keyword">if</span>(s &lt; <span class="number">0</span>) s = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(s &lt; <span class="number">0</span>) i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(i &gt; M) i = M;</span><br><span class="line">        <span class="keyword">if</span>(r &gt; M) r = M;</span><br><span class="line">        t--;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;序号: &quot;</span> &lt;&lt; t &lt;&lt; <span class="string">&quot; S: &quot;</span> &lt;&lt; s &lt;&lt; <span class="string">&quot; I: &quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot; R: &quot;</span> &lt;&lt; r &lt;&lt; endl;</span><br><span class="line">        <span class="built_in">SIR</span>(t, s, i, r);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>没有Matlab ，c++ 凑合一下。上面为了简化，假定每天是一个变化时间段，并且当天被传染的人，不会传染给易感人群，当天痊愈人数增加也不会减弱疾病传播，当天易感人群减少也不会影响疾病传播。</p>
-<p><strong>COVID-19</strong></p>
-<p>https://corona.help/country/china/state/hubei</p>
-<p>根据上面的网址提供的数据，COVID-19 在湖北初期的传播比较接近SIR模型，但是因为防疫措施，感染人数很快停止增加并且迅速减少。</p>
+          <p>Arthur Samuel(1959)</p>
+<blockquote>
+<p>Field of study that gives computers the ability to learn without being explicitly programmed.</p>
+</blockquote>
+<p>Tom Mitchell(1998) Well-posed Learning Problem</p>
+<blockquote>
+<p>A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.</p>
+</blockquote>
+<p><em>What is a well-posed problem?</em><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Well-posed_problem"></a></p>
 
       
     </div>
@@ -1182,7 +1110,7 @@ S(t) + I(t) + R(t) = M
 
 
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1223,7 +1151,7 @@ S(t) + I(t) + R(t) = M
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
